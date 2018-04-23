@@ -65,25 +65,59 @@ class App extends Component {
   };
 
   compteur = p => {
-    if (this.state.points > 4) {
-      alert('WIN WIN WIN');
-      this.setState({points : 0})
+    if (this.state.points === 4) {
+      this.setState({ points: 0 });
     }
     console.log("GAGNE");
     return p + 1;
   };
 
-  algo = (reponse, win) => {
-    return this.state.questionsList[this.state.random].good === reponse ?
-       this.setState({ points : this.state.points + 1 }) :
-       alert("|||  LOOSE |||");
-       {
-          if (this.state.points === 5){
-         alert(`T'as gagné`)
-       } 
-
-      }
+  algo = reponse => {
+    (() => {
+      this.state.questionsList[this.state.random].good === reponse
+        ? this.setState({ points: this.state.points + 1 })
+        : alert("|||  LOOSE |||");
+    })();
+    this.state.points === 5
+      ? (() => {
+          alert("VICTOIRE");
+          this.setState({ points: 0 });
+        })()
+      : (() => {
+          console.log(this.state.points);
+        })();
   };
+
+  // {
+  //   (() => {
+  //     if (this.state.points === 4) {
+  //       alert("GAGNE");
+  //     }
+  //   })();
+  // }
+  // return this.state.questionsList[this.state.random].good === reponse
+  //   ? this.setState({ points: this.state.points + 1 })
+  //   : alert("|||  LOOSE |||");
+
+  // algo = (reponse, win) => {
+  //   {
+  //     (() => {
+  //       if (this.state.points === 4) {
+  //         alert("GAGNE");
+  //       }
+  //     })();
+  //   }
+  //   return this.state.questionsList[this.state.random].good === reponse
+  //     ? this.setState({ points: this.state.points + 1 })
+  //     : alert("|||  LOOSE |||");
+  // };
+
+  // algo = (reponse, win) => {
+  //   {if(this.state.points ===5) {alert('GAGNE')} }
+  //   return this.state.questionsList[this.state.random].good === reponse ?
+  //      this.setState({ points : this.state.points + 1 }) :
+  //      alert("|||  LOOSE |||");
+  // };
 
   // algo = reponse => {
   //   this.state.questionsList[this.state.random].good === reponse
@@ -93,10 +127,10 @@ class App extends Component {
   // };
 
   ///   <COMPONENT DID MOUNT>   ///
-  componentDidMount() {
-    // this.compteur(this.state.points);
-    // this.setState({ random: this.makeRandomNumber(this.state.random) });
-  }
+  // componentDidMount() {
+  //   // this.compteur(this.state.points);
+  //   // this.setState({ random: this.makeRandomNumber(this.state.random) });
+  // }
 
   ///   <RENDER>    ///
   render() {
