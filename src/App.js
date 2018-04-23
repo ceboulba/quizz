@@ -64,27 +64,23 @@ class App extends Component {
     return random !== temp ? random : 1;
   };
 
-  compteur = p => {
-    if (this.state.points === 4) {
-      this.setState({ points: 0 });
-    }
-    console.log("GAGNE");
-    return p + 1;
+  compteur = () => {
+    this.setState({ points: this.state.points + 1 });
   };
 
   algo = reponse => {
     (() => {
       this.state.questionsList[this.state.random].good === reponse
-        ? this.setState({ points: this.state.points + 1 })
+        ? this.setState(this.compteur())
         : alert("|||  LOOSE |||");
     })();
-    this.state.points === 5
+    this.state.points === 4
       ? (() => {
           alert("VICTOIRE");
           this.setState({ points: 0 });
         })()
       : (() => {
-          console.log(this.state.points);
+          console.log(`points:  ${this.state.points+1} `);
         })();
   };
 
