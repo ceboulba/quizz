@@ -13,6 +13,7 @@ const defaultStyle = {
   fontWeight: "bold"
 };
 
+
 class App extends Component {
   state = {
     titre: this.props.titre,
@@ -84,50 +85,6 @@ class App extends Component {
         })();
   };
 
-  // {
-  //   (() => {
-  //     if (this.state.points === 4) {
-  //       alert("GAGNE");
-  //     }
-  //   })();
-  // }
-  // return this.state.questionsList[this.state.random].good === reponse
-  //   ? this.setState({ points: this.state.points + 1 })
-  //   : alert("|||  LOOSE |||");
-
-  // algo = (reponse, win) => {
-  //   {
-  //     (() => {
-  //       if (this.state.points === 4) {
-  //         alert("GAGNE");
-  //       }
-  //     })();
-  //   }
-  //   return this.state.questionsList[this.state.random].good === reponse
-  //     ? this.setState({ points: this.state.points + 1 })
-  //     : alert("|||  LOOSE |||");
-  // };
-
-  // algo = (reponse, win) => {
-  //   {if(this.state.points ===5) {alert('GAGNE')} }
-  //   return this.state.questionsList[this.state.random].good === reponse ?
-  //      this.setState({ points : this.state.points + 1 }) :
-  //      alert("|||  LOOSE |||");
-  // };
-
-  // algo = reponse => {
-  //   this.state.questionsList[this.state.random].good === reponse
-  //     ? this.setState({ points: this.compteur(this.state.points) })
-  //     : // alert("!!!  WIN  !!!")
-  //       alert("|||  LOOSE |||");
-  // };
-
-  ///   <COMPONENT DID MOUNT>   ///
-  // componentDidMount() {
-  //   // this.compteur(this.state.points);
-  //   // this.setState({ random: this.makeRandomNumber(this.state.random) });
-  // }
-
   ///   <RENDER>    ///
   render() {
     return (
@@ -161,7 +118,6 @@ class App extends Component {
               0
             </button>
           </span>
-
           <span>
             <button
               style={defaultStyle}
