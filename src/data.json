@@ -1,0 +1,53 @@
+[
+    {
+      "question": "Tu passes du props au state ?",
+      "reponse": "oui | non",
+      "good": 0
+    },
+    {
+      "question": "C'est aussi simple que ça ?",
+      "reponse": "oui | non",
+      "good": 1
+    },
+    {
+      "question": "Tu as chargé mon JSON ?",
+      "reponse": "oui | non",
+      "good": 0
+    },
+    {
+      "question": "Quel est ton prénom?",
+      "reponse": "|Antoine | Hector|",
+      "good": 0
+    },
+    {
+      "question": "Où habites-tu ?",
+      "reponse": "New-york | Longechenal",
+      "good": 1
+    },
+    {
+      "question": "Quel est ton age ?",
+      "reponse": "63 ans | 36 ans",
+      "good": 1
+    },
+    {
+      "question": "Combien d'enfants as tu ?",
+      "reponse": "1 | 2",
+      "good": 1
+    },
+    {
+      "question": "Quel est le prénom de ta femme ?",
+      "reponse": "Priscille | Marise",
+      "good": 0
+    },
+    {
+      "question": "Quel est le prénom de ta fille ?",
+      "reponse": "Lola | Ginette",
+      "good": 0
+    },
+    {
+      "question": "Quel âge a ton fils ?",
+      "reponse": "10 ans | 8 ans",
+      "good": 1
+    }
+  ]
+
