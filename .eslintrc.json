@@ -20,7 +20,6 @@
         "constructor-super": "warn",
         "valid-typeof": "warn"
     },
-    "extends": "airbnb",
     "rules": {
       "func-names": ["error", "never"]
     }

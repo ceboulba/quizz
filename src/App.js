@@ -5,14 +5,17 @@ import "./App.css";
 const defaultStyle = {
   padding: "6px",
   margin: "2px",
-  backgroundColor: "lightGrey",
-  border: "solid 1px #BADA55",
+  // backgroundColor: "lightGrey",
+  border: "solid 1px grey",
   minWidth: "30px",
   height: "30px",
   color: "grey",
   fontWeight: "bold"
 };
-
+const typos = {
+  fontFamily: "Roboto",
+  color: "grey"
+};
 
 class App extends Component {
   state = {
@@ -81,28 +84,30 @@ class App extends Component {
           this.setState({ points: 0 });
         })()
       : (() => {
-          console.log(`points:  ${this.state.points+1} `);
+          console.log(`points:  ${this.state.points + 1} `);
         })();
   };
+
+  print = data => {
+    console.log(data);
+  };
+
+  componentDidMount() {
+    this.print(this.state.questionsList);
+  }
 
   ///   <RENDER>    ///
   render() {
     return (
-      <div className="App">
+      <div className="App" style={typos}>
         <h1 style={defaultStyle} className="App-title">
           {this.state.titre}
         </h1>
         <div>
-          <p>
-            Question n° {this.state.random}
-          </p>
-          <h3>
-            {this.state.questionsList[this.state.random].question}
-          </h3>
+          <p>Question n° {this.state.random}</p>
+          <h3>{this.state.questionsList[this.state.random].question}</h3>
           <div>
-            <p>
-              {this.state.questionsList[this.state.random].reponse}
-            </p>
+            <p>{this.state.questionsList[this.state.random].reponse}</p>
           </div>
           <span>
             <button
@@ -118,6 +123,7 @@ class App extends Component {
               0
             </button>
           </span>
+
           <span>
             <button
               style={defaultStyle}
@@ -141,19 +147,62 @@ class App extends Component {
             });
             actionTwo = console.log("CA MARCHE !");
           }}
-          // onClick={() => {
-          //   this.setState({ random: this.makeRandomNumber(this.state.random) });
-          // }}
         >
           New Question
         </button>
 
-        <div style={defaultStyle}>
-          points = {this.state.points}
-        </div>
+        <div style={defaultStyle}>points = {this.state.points}</div>
       </div>
     );
   }
 }
 
 export default App;
+
+/*
+
+  {
+    (() => {
+      if (this.state.points === 4) {
+        alert("GAGNE");
+      }
+    })();
+  }
+  return this.state.questionsList[this.state.random].good === reponse
+    ? this.setState({ points: this.state.points + 1 })
+    : alert("|||  LOOSE |||");
+
+  algo = (reponse, win) => {
+    {
+      (() => {
+        if (this.state.points === 4) {
+          alert("GAGNE");
+        }
+      })();
+    }
+    return this.state.questionsList[this.state.random].good === reponse
+      ? this.setState({ points: this.state.points + 1 })
+      : alert("|||  LOOSE |||");
+  };
+
+  algo = (reponse, win) => {
+    {if(this.state.points ===5) {alert('GAGNE')} }
+    return this.state.questionsList[this.state.random].good === reponse ?
+       this.setState({ points : this.state.points + 1 }) :
+       alert("|||  LOOSE |||");
+  };
+
+  algo = reponse => {
+    this.state.questionsList[this.state.random].good === reponse
+      ? this.setState({ points: this.compteur(this.state.points) })
+      : // alert("!!!  WIN  !!!")
+        alert("|||  LOOSE |||");
+  };
+
+  /   <COMPONENT DID MOUNT>   ///
+  componentDidMount() {
+    this.compteur(this.state.points);
+    this.setState({ random: this.makeRandomNumber(this.state.random) });
+  }
+  
+*/
