@@ -5,16 +5,15 @@ import "./App.css";
 const defaultStyle = {
   padding: "6px",
   margin: "2px",
-  // backgroundColor: "lightGrey",
-  border: "solid 1px grey",
   minWidth: "30px",
   height: "30px",
-  color: "grey",
+  color: "white",
   fontWeight: "bold"
 };
 const typos = {
   fontFamily: "Roboto",
-  color: "grey"
+  color: "#fff",
+  
 };
 
 class App extends Component {
@@ -68,8 +67,8 @@ class App extends Component {
   render() {
     return (
       <div className="App" style={typos}>
-        <h1 style={defaultStyle} className="App-title">
-          {this.state.titre}
+        <h1 style={defaultStyle} className="App-title border">
+          {this.props.titre}
         </h1>
         <div>
           <p>Question n° {this.state.random}</p>
@@ -108,7 +107,7 @@ class App extends Component {
           </span>
         </div>
         <button
-          style={defaultStyle}
+          style={typos}
           onClick={(actionOne, actionTwo) => {
             actionOne = this.setState({
               random: this.makeRandomNumber(this.state.random)
@@ -119,7 +118,7 @@ class App extends Component {
           New Question
         </button>
 
-        <div style={defaultStyle}>points = {this.state.points}</div>
+        <h3 style={defaultStyle}>points = {this.state.points}</h3>
       </div>
     );
   }
