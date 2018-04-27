@@ -1,46 +1,17 @@
+*{
+  font-family: 'Roboto';
+}
+
 .App {
   text-align: center;
   width: 50vh;
   margin: auto;
-  border: solid 1px grey;
+  border: solid 1px #6A82FB;
   background: #FC5C7D;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
-.border{
-  border-width: 100px;
-  border-style: solid;
-  border-image:linear-gradient(to right, #fc5c7d, #6a82fb);
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .button{
+    margin: .5vh;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
