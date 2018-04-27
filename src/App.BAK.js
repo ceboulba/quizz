@@ -20,6 +20,7 @@ class App extends Component {
       points: 0
     };
 
+    console.log(this.props.data[0].reponse[0]);
 
     this.print = data => {
       data.map((d, i) => console.log(`question n ${i} : ${d}`));
@@ -32,28 +33,25 @@ class App extends Component {
     };
 
     this.compteur = () => {
-      this.setState({ points: this.state.points+ 1 });
+      this.setState({ points: this.state.points + 1 });
     };
-
-    this.victory = () => {
-      alert('VICTORY');
-      this.setState({points: 0 });
-    }
 
     this.algo = reponse => {
       (() => {
-        this.props.data[this.state.random].good === reponse
-        ? this.setState(this.compteur())
-        : alert("|||  LOOSE |||");
+        this.props.data[this.state.random].good === reponse[0]
+          ? this.setState(this.compteur())
+          : alert("|||  LOOSE |||");
       })();
+      this.state.points === 4
+        ? (() => {
+            alert("VICTOIRE");
+            this.setState({ points: 0 });
+          })()
+        : (() => {
+            console.log(`points:  ${this.state.points + 1} `);
+          })();
     };
   }
-
-componentDidUpdate(){
-  this.state.points === 5 ?
-  this.victory() :
-  console.log('pas encore')
-}
 
   render() {
     return (
@@ -83,11 +81,7 @@ componentDidUpdate(){
               });
             }}
           >
-
-          {
-           this.props.data[this.state.random].reponse[0]          
-          }          
-
+            0
           </button>
         </span>  
 
@@ -103,7 +97,7 @@ componentDidUpdate(){
               });
             }}
           >
-          {this.props.data[this.state.random].reponse[1]}
+          {this.props.data[0].reponse[1]}
           </button>
         </span>
 
