@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-// STYLES //
+///   STYLES    ///
 const font = {
   fontFamily: "Roboto",
   color: "white"
@@ -21,7 +21,7 @@ class App extends Component {
 
   ///   LIFECYCLE   ///
   componentDidUpdate() {
-    this.state.points === 5 ? this.victory() : console.log("pas encore");
+    this.state.points > 4 ? this.victory() : console.log("pas encore");
   }
 
   ///   FUNCTIONS   ///
