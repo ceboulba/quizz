@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
+//EDIT @ Home
+
 ///   STYLES    ///
 const font = {
   fontFamily: "Roboto",
