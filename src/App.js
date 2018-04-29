@@ -20,17 +20,15 @@ class App extends Component {
   }
 
   ///   LIFECYCLE   ///
-  componentDidUpdate() {
-    this.state.points > 4 ? this.victory() : console.log("pas encore");
-  }
+   componentDidUpdate() {
+    this.state.points === 5  ? this.victory() : console.log("pas encore");
+   }
 
   ///   FUNCTIONS   ///
   algo(reponse) {
-    (() => {
       this.props.data[this.state.random].good === reponse
         ? this.setState(this.compteur())
         : alert("|||  LOOSE |||");
-    })();
   }
 
   victory() {
