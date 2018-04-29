@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 //EDIT @ Home
+//EDIT @ SHADOW
 
 ///   STYLES    ///
 const font = {
